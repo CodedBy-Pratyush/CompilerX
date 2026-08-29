@@ -19,13 +19,9 @@ function statusToType(statusId) {
 }
 
 function buildHeaders() {
-  const headers = { "Content-Type": "application/json" };
-
-
-  if (JUDGE0_API_KEY) headers["X-RapidAPI-Key"] = JUDGE0_API_KEY;
-  if (JUDGE0_API_HOST) headers["X-RapidAPI-Host"] = JUDGE0_API_HOST;
-
-  return headers;
+  return {
+    "Content-Type": "application/json",
+  };
 }
 
 async function submitToJudge0(languageId, code, stdin) {
