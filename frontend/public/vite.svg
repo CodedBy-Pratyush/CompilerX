@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20D9FF"/><stop offset=".5" stop-color="#0878FF"/><stop offset="1" stop-color="#061B63"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE33B"/><stop offset=".45" stop-color="#FF7A00"/><stop offset="1" stop-color="#D60000"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#08204A"/><stop offset="1" stop-color="#123C73"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="#0878FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="85" cy="210" r="18"/><path d="M103 210h115l38 35h115"/>
+    <circle cx="85" cy="310" r="18"/><path d="M103 310h90l40 35h125"/>
+    <circle cx="130" cy="410" r="18"/><path d="M148 410h100l35-30h100"/>
+  </g>
+  <g fill="none" stroke="#FF7A00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="1115" cy="210" r="18"/><path d="M1097 210H982l-38 35H829"/>
+    <circle cx="1115" cy="310" r="18"/><path d="M1097 310h-90l-40 35H842"/>
+    <circle cx="1070" cy="410" r="18"/><path d="M1052 410h-100l-35-30H817"/>
+  </g>
+
+  <path d="M285 100 L535 100 L650 300 L535 500 L285 500 L470 300 Z" fill="url(#blue)"/>
+  <path d="M665 300 L800 100 L1035 100 L825 300 L1035 500 L800 500 Z" fill="url(#orange)"/>
+  <path d="M350 125 L535 125 L620 300 L535 270 Z" fill="#68E9FF" opacity=".55"/>
+  <path d="M850 125 L1000 125 L825 285 Z" fill="#FFF06A" opacity=".5"/>
+  <path d="M350 475 L535 475 L620 305 L535 330 Z" fill="#0751D8" opacity=".7"/>
+  <path d="M850 475 L1000 475 L825 315 Z" fill="#C90000" opacity=".55"/>
+
+  <text x="150" y="625" font-family="Arial, Helvetica, sans-serif" font-size="105" font-weight="800" font-style="italic" fill="url(#text)">Compiler</text>
+  <text x="910" y="625" font-family="Arial, Helvetica, sans-serif" font-size="115" font-weight="900" font-style="italic" fill="url(#orange)">X</text>
+
+  <path d="M285 650 H760" stroke="#0878FF" stroke-width="6"/>
+  <path d="M760 650 H920" stroke="#FF6500" stroke-width="6"/>
+</svg>
