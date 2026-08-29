@@ -27,9 +27,6 @@ app.use(cookieParser());
 app.set("trust proxy", 1);
 app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
 
-app.get("/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
-});
 
 
 app.use("/auth", authRoutes);
