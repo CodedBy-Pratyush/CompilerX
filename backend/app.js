@@ -35,9 +35,7 @@ app.use("/", executionRoutes);
 app.use("/", aiRoutes);
 
 
-app.get("/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
-});
+
 
 // 404
 app.use((req, res) => {
