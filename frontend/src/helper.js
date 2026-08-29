@@ -1,4 +1,4 @@
-export const api_base_url = "https://compilerx-at36.onrender.com";
+export const api_base_url = "https://compilerx-w6ih.onrender.com";
 
 export async function apiFetch(path, options = {}) {
   const res = await fetch(api_base_url + path, {
