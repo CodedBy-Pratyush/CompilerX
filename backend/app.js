@@ -28,14 +28,16 @@ app.set("trust proxy", 1);
 app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
 
 
-app.get("/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
-});
 
 app.use("/auth", authRoutes);
 app.use("/", projectRoutes);
 app.use("/", executionRoutes);
 app.use("/", aiRoutes);
+
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
 
 // 404
 app.use((req, res) => {
