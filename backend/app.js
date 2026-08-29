@@ -27,6 +27,11 @@ app.use(cookieParser());
 app.set("trust proxy", 1);
 app.use(cors({ origin: CLIENT_ORIGIN, credentials: true }));
 
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
 app.use("/auth", authRoutes);
 app.use("/", projectRoutes);
 app.use("/", executionRoutes);
@@ -43,8 +48,5 @@ app.use((err, req, res, next) => {
 });
 
 
-app.get("/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
-});
 
 module.exports = app;
