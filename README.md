@@ -1,9 +1,6 @@
 ﻿# CompilerX
-
-#LIVE - compiler-x-ten.vercel.app
-
-# CompileX
-
+ **Live:** [compiler-x-ten.vercel.app](https://compiler-x-ten.vercel.app)
+ 
 A MERN online code editor/compiler (Monaco + the Judge0 API for running
 JavaScript, Python, Java, C, and C++ code).
 
