@@ -23,11 +23,9 @@ const Login = () => {
         method: "POST",
         body: JSON.stringify({ email, pwd }),
       });
-      if (data.success) {
-      
-        await refreshUser();
-        navigate("/");
-      } else {
+     if (data.success) {
+    navigate("/");
+} else {
         toast.error(data.msg);
       }
     } catch (err) {
