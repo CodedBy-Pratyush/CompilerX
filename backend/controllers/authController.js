@@ -8,7 +8,9 @@ exports.signUp = async (req, res) => {
 
     const existing = await userModel.findOne({ email });
     if (existing) {
-      return res.status(400).json({ success: false, msg: "Email already exists" });
+      return res
+        .status(400)
+        .json({ success: false, msg: "Email already exists" });
     }
 
     const salt = await bcrypt.genSalt(12);
@@ -16,7 +18,9 @@ exports.signUp = async (req, res) => {
 
     await userModel.create({ email, password: hash, fullName });
 
-    return res.status(200).json({ success: true, msg: "User created successfully" });
+    return res
+      .status(200)
+      .json({ success: true, msg: "User created successfully" });
   } catch (error) {
     // FIX: log the real error server-side so production issues are visible
     // in Render logs instead of only guessable from the response body.
@@ -45,6 +49,12 @@ exports.login = async (req, res) => {
     return res.status(200).json({
       success: true,
       msg: "User logged in successfully",
+      // Also send the token in the body so the frontend can store it and
+      // send it back as "Authorization: Bearer <token>". The cookie alone
+      // is unreliable on mobile (cross-site SameSite=None cookies get
+      // blocked by iOS Safari ITP, in-app webviews, etc.) even though it
+      // works fine on desktop.
+      token,
       user: { id: user._id, fullName: user.fullName, email: user.email },
     });
   } catch (error) {
@@ -57,7 +67,9 @@ exports.login = async (req, res) => {
 
 exports.logout = async (req, res) => {
   clearAuthCookie(res);
-  return res.status(200).json({ success: true, msg: "Logged out successfully" });
+  return res
+    .status(200)
+    .json({ success: true, msg: "Logged out successfully" });
 };
 
 exports.me = async (req, res) => {
