@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { apiFetch, saveAuthToken } from "../helper";
+import { apiFetch } from "../helper";
 import { useAuth } from "../context/AuthContext";
 import Logo from "../components/Logo";
 
@@ -23,7 +23,6 @@ const Login = () => {
         body: JSON.stringify({ email, pwd }),
       });
       if (data.success) {
-        saveAuthToken(data.token);
         await refreshUser();
         navigate("/");
       } else {

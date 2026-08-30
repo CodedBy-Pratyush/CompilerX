@@ -49,17 +49,9 @@ exports.login = async (req, res) => {
     return res.status(200).json({
       success: true,
       msg: "User logged in successfully",
-      // Also send the token in the body so the frontend can store it and
-      // send it back as "Authorization: Bearer <token>". The cookie alone
-      // is unreliable on mobile (cross-site SameSite=None cookies get
-      // blocked by iOS Safari ITP, in-app webviews, etc.) even though it
-      // works fine on desktop.
-      token,
       user: { id: user._id, fullName: user.fullName, email: user.email },
     });
   } catch (error) {
-    // FIX: log the real error server-side (this is how the "option sameSite
-    // is invalid" root cause was found — it was only visible in error.message).
     console.error("login error:", error);
     return res.status(500).json({ success: false, msg: error.message });
   }

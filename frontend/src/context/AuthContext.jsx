@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { apiFetch, clearAuthToken } from "../helper";
+import { apiFetch } from "../helper";
 
 const AuthContext = createContext(null);
 
@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }) => {
     try {
       await apiFetch("/auth/logout", { method: "POST" });
     } finally {
-      clearAuthToken();
       setUser(null);
     }
   }, []);
